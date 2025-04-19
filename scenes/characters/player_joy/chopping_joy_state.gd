@@ -23,7 +23,7 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
-	print("joystick:",player.joystick.is_drag)
+#	print("chopping:",player.joystick.is_drag)
 	if !player.joystick.is_drag:
 		var direction = player.joystick.pre_vector
 		if direction == Vector2.UP:

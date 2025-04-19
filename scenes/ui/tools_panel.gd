@@ -55,3 +55,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		tool_watering_can.release_focus()
 		tool_corn.release_focus()
 		tool_tomato.release_focus()
+
+
+
+func _on_hit_button_hit_release() -> void:
+	if ToolManager.selected_tool == DataTypes.Tools.AxeWood:
+		tool_axe.grab_focus()
+	elif  ToolManager.selected_tool == DataTypes.Tools.TillGround:
+		tool_tilling.grab_focus()
+	elif  ToolManager.selected_tool == DataTypes.Tools.WaterCrops:
+		tool_watering_can.grab_focus()
+	elif  ToolManager.selected_tool == DataTypes.Tools.PlantCorn:
+		tool_corn.grab_focus()
+	elif  ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
+		tool_tomato.grab_focus()

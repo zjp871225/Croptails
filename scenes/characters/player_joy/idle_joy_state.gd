@@ -9,8 +9,9 @@ func _on_process(_delta: float) -> void:
 
 
 func _on_physics_process(_delta: float) -> void:
+	print("idle:",player.joystick.is_drag)
 	if !player.joystick.is_drag:
-		var direction =player.joystick.pre_vector
+		var direction = player.joystick.pre_vector
 		if direction == Vector2.UP:
 			animated_sprite_2d.play("idle_back")
 		elif direction == Vector2.DOWN:
@@ -28,11 +29,11 @@ func _on_next_transitions() -> void:
 	#print("is_press:", player.is_press_hit_btn, " tool:", player.current_tool)
 	if GameInputEvents.is_movement_input():
 		transition.emit("Walk")
-	if player.is_press_hit_btn && player.current_tool == DataTypes.Tools.AxeWood:
+	if player.game_screen.is_press_hit_button && player.current_tool == DataTypes.Tools.AxeWood:
 		transition.emit("Chopping")
-	if player.is_press_hit_btn && player.current_tool == DataTypes.Tools.TillGround:
+	if player.game_screen.is_press_hit_button && player.current_tool == DataTypes.Tools.TillGround:
 		transition.emit("Tilling")
-	if player.is_press_hit_btn && player.current_tool == DataTypes.Tools.WaterCrops:
+	if player.game_screen.is_press_hit_button && player.current_tool == DataTypes.Tools.WaterCrops:
 		transition.emit("Watering")
 
 
