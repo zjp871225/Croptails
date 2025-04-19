@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi60ee8yaogog"]
+[gd_scene load_steps=9 format=3 uid="uid://bi60ee8yaogog"]
 
 [ext_resource type="Theme" uid="uid://wc17cexjis1g" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="Script" uid="uid://cwnl8higgeart" path="res://scenes/ui/game_screen.gd" id="1_ooiym"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjlsk1iht173f" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
 [ext_resource type="Texture2D" uid="uid://bamf6lvnmbqxq" path="res://assets/game/other/hit2.png" id="4_gkbp4"]
 [ext_resource type="Texture2D" uid="uid://cpt5xsvpv5dmh" path="res://assets/game/other/hit1.png" id="5_0kkfd"]
+[ext_resource type="PackedScene" uid="uid://bji7camkll4re" path="res://scenes/ui/day_and_night_panel.tscn" id="5_ce4rh"]
 [ext_resource type="Script" uid="uid://cn02gx3chjcvf" path="res://scenes/ui/hit_button.gd" id="6_nwa5a"]
 
 [node name="GameScreen" type="CanvasLayer"]
@@ -28,6 +29,11 @@ size_flags_vertical = 8
 [node name="InventoryPanel" parent="MarginContainer" instance=ExtResource("3_gusqm")]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DayAndNightPanel" parent="MarginContainer" instance=ExtResource("5_ce4rh")]
+layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="HitButton" type="TextureButton" parent="."]
