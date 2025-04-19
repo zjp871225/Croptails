@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4b0mdtbeeqsx"]
+
+[ext_resource type="Texture2D" uid="uid://47ke7ewodrmj" path="res://assets/game/objects/joydi.png" id="1_e77cc"]
+[ext_resource type="Script" uid="uid://c0pgh6nv1y8ps" path="res://scenes/components/joystick2.gd" id="2_8g2qs"]
+[ext_resource type="Texture2D" uid="uid://d1nsmytqibiiv" path="res://assets/game/other/btn.png" id="3_8g2qs"]
+[ext_resource type="Texture2D" uid="uid://cdqgax1puky5d" path="res://assets/game/other/btn2.png" id="4_6tnub"]
+
+[node name="joystick2" type="Sprite2D"]
+scale = Vector2(0.686808, 0.686808)
+texture = ExtResource("1_e77cc")
+script = ExtResource("2_8g2qs")
+
+[node name="up" type="TouchScreenButton" parent="."]
+position = Vector2(-36.5791, -118.422)
+scale = Vector2(0.279388, 0.279388)
+texture_normal = ExtResource("3_8g2qs")
+texture_pressed = ExtResource("4_6tnub")
+
+[node name="right" type="TouchScreenButton" parent="."]
+position = Vector2(118.214, -35.3421)
+rotation = 1.5708
+scale = Vector2(0.271, 0.279)
+texture_normal = ExtResource("3_8g2qs")
+texture_pressed = ExtResource("4_6tnub")
+
+[node name="left" type="TouchScreenButton" parent="."]
+position = Vector2(-117.937, 36.4003)
+rotation = -1.5708
+scale = Vector2(0.279, 0.279)
+texture_normal = ExtResource("3_8g2qs")
+texture_pressed = ExtResource("4_6tnub")
+
+[node name="down" type="TouchScreenButton" parent="."]
+position = Vector2(34.9443, 117.937)
+rotation = 3.14159
+scale = Vector2(0.279, 0.279)
+texture_normal = ExtResource("3_8g2qs")
+texture_pressed = ExtResource("4_6tnub")
+
+[connection signal="pressed" from="up" to="." method="_on_up_pressed"]
+[connection signal="released" from="up" to="." method="_on_up_released"]
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]
+[connection signal="released" from="right" to="." method="_on_right_released"]
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="released" from="left" to="." method="_on_left_released"]
+[connection signal="pressed" from="down" to="." method="_on_down_pressed"]
+[connection signal="released" from="down" to="." method="_on_down_released"]
