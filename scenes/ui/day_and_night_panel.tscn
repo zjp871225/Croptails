@@ -15,6 +15,7 @@ theme = ExtResource("1_fnqby")
 script = ExtResource("2_xc6ft")
 
 [node name="DayPanel" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
 layout_mode = 0
 offset_left = -80.0
 offset_bottom = 26.0
@@ -34,6 +35,7 @@ theme_type_variation = &"DayAndNightLabel"
 text = "DAY 0"
 
 [node name="TimePanel" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
 layout_mode = 0
 offset_left = -80.0
 offset_top = 28.0
@@ -54,6 +56,7 @@ theme_type_variation = &"DayAndNightLabel"
 text = "00:00"
 
 [node name="Control" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
 anchors_preset = 0
 offset_left = -80.0
 offset_top = 56.0
