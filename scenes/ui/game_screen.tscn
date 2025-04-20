@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi60ee8yaogog"]
+[gd_scene load_steps=9 format=3 uid="uid://bi60ee8yaogog"]
 
 [ext_resource type="Theme" uid="uid://wc17cexjis1g" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
+[ext_resource type="Script" uid="uid://cwnl8higgeart" path="res://scenes/ui/game_screen.gd" id="1_ooiym"]
 [ext_resource type="PackedScene" uid="uid://c3a2pa01xigca" path="res://scenes/ui/tools_panel.tscn" id="2_gusqm"]
 [ext_resource type="PackedScene" uid="uid://bjlsk1iht173f" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
+[ext_resource type="Texture2D" uid="uid://bamf6lvnmbqxq" path="res://assets/game/other/hit2.png" id="4_gkbp4"]
+[ext_resource type="Texture2D" uid="uid://cpt5xsvpv5dmh" path="res://assets/game/other/hit1.png" id="5_0kkfd"]
+[ext_resource type="PackedScene" uid="uid://bji7camkll4re" path="res://scenes/ui/day_and_night_panel.tscn" id="5_ce4rh"]
+[ext_resource type="Script" uid="uid://cn02gx3chjcvf" path="res://scenes/ui/hit_button.gd" id="6_nwa5a"]
 
 [node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_ooiym")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -24,3 +30,31 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="DayAndNightPanel" parent="MarginContainer" instance=ExtResource("5_ce4rh")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="HitButton" type="TextureButton" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -117.0
+offset_right = 130.0
+offset_bottom = 139.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.471006, 0.451917)
+texture_normal = ExtResource("4_gkbp4")
+texture_pressed = ExtResource("5_0kkfd")
+script = ExtResource("6_nwa5a")
+
+[connection signal="button_down" from="HitButton" to="HitButton" method="_on_button_down"]
+[connection signal="button_up" from="HitButton" to="HitButton" method="_on_button_up"]
+[connection signal="hit_press" from="HitButton" to="." method="_on_hit_button_hit_press"]
+[connection signal="hit_release" from="HitButton" to="." method="_on_hit_button_hit_release"]
+[connection signal="hit_release" from="HitButton" to="MarginContainer/ToolsPanel" method="_on_hit_button_hit_release"]

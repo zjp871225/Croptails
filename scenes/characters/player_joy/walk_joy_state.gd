@@ -9,6 +9,7 @@ func _on_process(_delta : float) -> void:
 
 
 func _on_physics_process(_delta : float) -> void:
+	print("walk:",player.joystick.is_drag)
 	var direction:Vector2 = GameInputEvents.movement_input_joy(player.player_direction)
 	if direction == Vector2.UP:
 		animated_sprite_2d.play("walk_back")
