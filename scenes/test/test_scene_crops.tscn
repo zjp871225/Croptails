@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://dnvbwlxpd2a1c"]
+[gd_scene load_steps=7 format=4 uid="uid://dnvbwlxpd2a1c"]
 
 [ext_resource type="PackedScene" uid="uid://cosgsw11fkssi" path="res://scenes/components/day_night_cycle_component.tscn" id="1_17gaa"]
 [ext_resource type="TileSet" uid="uid://bk0tisb1tj8m2" path="res://Tilesets/game_tile_set.tres" id="2_eku4r"]
 [ext_resource type="PackedScene" uid="uid://bqnnruyo5n0ri" path="res://scenes/characters/player/player.tscn" id="3_s5uu4"]
 [ext_resource type="PackedScene" uid="uid://bi60ee8yaogog" path="res://scenes/ui/game_screen.tscn" id="4_f40v7"]
 [ext_resource type="PackedScene" uid="uid://cpqanqmb82sdg" path="res://scenes/objects/plants/corn.tscn" id="5_eku4r"]
+[ext_resource type="PackedScene" uid="uid://btnjpeywrju18" path="res://scenes/objects/plants/tomato.tscn" id="6_s5uu4"]
 
-[node name="TestSceneDayAndNightCycle" type="Node2D"]
+[node name="TestSceneCrops" type="Node2D"]
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_17gaa")]
 visible = false
@@ -29,3 +30,6 @@ current_tool = 3
 
 [node name="Corn" parent="." instance=ExtResource("5_eku4r")]
 position = Vector2(177, 169)
+
+[node name="Tomato" parent="." instance=ExtResource("6_s5uu4")]
+position = Vector2(218, 155)
